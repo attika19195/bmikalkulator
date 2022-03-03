@@ -1,5 +1,6 @@
 package bmikalkulator;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class BmiKalkulator {
@@ -34,7 +35,20 @@ public class BmiKalkulator {
 
     private static void ertekeles(double bmiIndex, int tomeg, int magassag) {
         System.out.printf("Ön %d cm magas és %d kg tömegű.\n", magassag, tomeg);
-        System.out.printf("Így BMI indexe: %f.\n", bmiIndex);
+        System.out.printf(Locale.ENGLISH, "Így BMI indexe: %1f.\n", bmiIndex);
+        if (bmiIndex <= 20.0){
+            System.out.println("Ön sovány.");
+        }else if (bmiIndex > 20.0 && bmiIndex <= 25.0){
+            System.out.println("Ön normál testalkatú.");
+        }else if (bmiIndex > 25.0 && bmiIndex <= 30.0){
+            System.out.println("Ön túlsúlyos.");
+        }else if (bmiIndex > 30.0 && bmiIndex <= 35.0){
+            System.out.println("Ön elhízott.");
+        }else if (bmiIndex > 35.0){
+            System.out.println("Ön kórosan elhízott.");
+        }
+        
+        
         
     }
 
